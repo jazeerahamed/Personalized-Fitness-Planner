@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Fitness Planner — Modern UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00b894;
+      --secondary: #0984e3;
+      --bg: #f4f7fb;
+      --text-dark: #2d3436;
+      --text-light: #636e72;
+      --white: #ffffff;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 30px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .logo span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      font-weight: 700;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+    }
+
+    .logo h1 {
+      font-size: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg);
+      padding: 12px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+    }
+
+    .profile img {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .profile small {
+      color: var(--text-light);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 3px 6px var(--shadow);
+    }
+
+    .stat strong {
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .cta {
+      display: block;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 5px 10px var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    /* Main Section */
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h2 {
+      font-size: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .exercise, .meal, .grocery-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .exercise:last-child, .meal:last-child, .grocery-item:last-child {
+      border-bottom: none;
+    }
+
+    .exercise span, .meal span {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-light);
+      margin-top: 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      body { padding: 20px; }
+      .container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <span>SF</span>
+        <h1>Student Fitness</h1>
+      </div>
+
+      <div class="profile">
+        <img src="https://i.pravatar.cc/80?img=3" alt="User">
+        <div>
+          <strong>Abdalah Ansari</strong><br>
+          <small>21 • Vegetarian • ₹250/wk</small>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><small>Goal</small><br><strong>Lose 5kg</strong></div>
+        <div class="stat"><small>Workouts/wk</small><br><strong>3</strong></div>
+        <div class="stat"><small>Budget</small><br><strong>₹250</strong></div>
+        <div class="stat"><small>Equipment</small><br><strong>None</strong></div>
+      </div>
+
+      <a href="#" class="cta">View Today's Plan</a>
+    </aside>
+
+    <main class="main">
+      <div class="header">
+        <div>
+          <h2>Good Morning, Abdalah Ansari👋</h2>
+          <p>Here’s your personalized fitness and meal plan.</p>
+        </div>
+        <div>
+          <small style="color:var(--text-light)">Today</small><br>
+          <strong>Tue, Oct 14</strong>
+        </div>
+      </div>
+
+      <section class="grid">
+        <div class="card">
+          <h3>Workout Plan (30 min)</h3>
+          <p>Dorm-friendly — no equipment required.</p>
+
+          <div class="exercise"><div>Warm-up (5 min)</div><span>Jumping jacks, Arm circles</span></div>
+          <div class="exercise"><div>Circuit (3 rounds)</div><span>Squats, Push-ups, Lunges, Plank</span></div>
+          <div class="exercise"><div>Cooldown (5 min)</div><span>Stretching</span></div>
+
+          <button class="btn" style="margin-top:12px">Start Workout</button>
+        </div>
+
+        <div class="card">
+          <h3>Meal Plan (~1400 kcal)</h3>
+          <p>South-Asian vegetarian • budget friendly</p>
+
+          <div class="meal"><div>Breakfast</div><span>Masala Oats — 320 kcal</span></div>
+          <div class="meal"><div>Lunch</div><span>Dal + Chapati — 420 kcal</span></div>
+          <div class="meal"><div>Dinner</div><span>Veg Stir-fry + Rice — 450 kcal</span></div>
+
+          <button class="btn" style="margin-top:12px">View Full Plan</button>
+        </div>
+
+        <div class="card">
+          <h3>Grocery List</h3>
+          <p>Essential items for your weekly plan.</p>
+
+          <div class="grocery-item"><span>Rolled Oats</span><span>40g</span></div>
+          <div class="grocery-item"><span>Yellow Lentils</span><span>250g</span></div>
+          <div class="grocery-item"><span>Vegetables</span><span>Assorted</span></div>
+          <div class="grocery-item"><span>Yogurt</span><span>200g</span></div>
+
+          <p style="margin-top:10px"><strong>Total Cost:</strong> ₹230</p>
+        </div>
+
+        <div class="card">
+          <h3>Progress Tracker</h3>
+          <p>Track your weekly improvement.</p>
+
+          <div style="background:#eaeaea;border-radius:10px;overflow:hidden;height:10px;margin-bottom:8px">
+            <div style="background:linear-gradient(90deg,var(--primary),var(--secondary));width:45%;height:100%"></div>
+          </div>
+          <small>45% to goal</small>
+
+          <div style="margin-top:12px">
+            <label for="weight">Today's Weight (kg)</label><br>
+            <input type="number" id="weight" placeholder="Enter weight" style="padding:8px;width:100%;border-radius:8px;border:1px solid #ddd;margin-top:6px">
+          </div>
+          <button class="btn" style="margin-top:10px">Save Progress</button>
+        </div>
+      </section>
+
+      <footer>© 2025 Student Fitness Planner • Designed for Students</footer>
+    </main>
+  </div>
+</body>
+</html>
